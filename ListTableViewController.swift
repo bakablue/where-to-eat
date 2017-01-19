@@ -20,16 +20,12 @@ class ListTableViewController: UITableViewController {
         
         let url = URL(string: "https://google.fr")
         
-        print(url)
         let task = URLSession.shared.dataTask(with: url!) { (data, urlResponse, error) -> Void in
             guard error == nil else {
                 print("ERROR")
                 print(error.debugDescription)
                 return
             }
-            print("OK")
-            print(data)
-            UIImage(data: data!)
         }
         task.resume()
 

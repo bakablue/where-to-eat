@@ -457,7 +457,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="GET-tg-QBk"/>
-                    <navigationItem key="navigationItem" id="DUQ-YA-mt0"/>
+                    <navigationItem key="navigationItem" id="DUQ-YA-mt0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="yQy-B6-rJ9">
+                            <connections>
+                                <action selector="shareAction:" destination="LyI-7f-tVT" id="xi4-Go-veb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelAddress" destination="axj-an-ADW" id="KZs-eD-0Ur"/>
                         <outlet property="labelNote" destination="p2r-i4-tYi" id="GhF-xm-oos"/>
@@ -465,6 +471,7 @@
                         <outlet property="locationResto" destination="miz-dc-UYf" id="0id-GT-0U4"/>
                         <outlet property="map" destination="miz-dc-UYf" id="avQ-r6-x3R"/>
                         <outlet property="navigation" destination="DUQ-YA-mt0" id="KKA-7H-65l"/>
+                        <outlet property="shareButton" destination="yQy-B6-rJ9" id="30H-ba-fq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gac-oF-ox1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -554,7 +561,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2Lj-ch-WHq"/>
-        <segue reference="ecu-Ug-gHo"/>
+        <segue reference="KEs-vR-rrP"/>
+        <segue reference="59r-h2-e0u"/>
     </inferredMetricsTieBreakers>
 </document>

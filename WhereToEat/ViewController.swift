@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FontAwesomeKit
 
 
 class ViewController: UIViewController {
@@ -55,8 +54,6 @@ class ViewController: UIViewController {
         if (addressFromLocation != nil) {
             address.text = addressFromLocation!
         }
-        
-        address.font = FAKFontAwesome.iconFont(withSize: 5)
         //stylePicker.
         // Do any additional setup after loading the view, typically from a nib.
     }

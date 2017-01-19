@@ -20,7 +20,8 @@ class ViewRestoController: UIViewController {
     @IBOutlet weak var labelNote: UILabel!
     @IBOutlet weak var locationResto: MKMapView!
     @IBOutlet weak var map: MKMapView!
-
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,5 +55,25 @@ class ViewRestoController: UIViewController {
             self.map.isZoomEnabled = true
             
         }
+    }
+    @IBAction func shareAction(_ sender: Any) {
+        if let url = URL(string: "https://link.tym.cool/redir.html?a=57607a0d3b&d=eyJhcmVhIjoiRG93bmxvYWQgTVA0IExpbmsiLCJpZCI6IjNhMDkwNTEwLTQ3MzEtNDI3MC05ZGRkLTVkYzIwMDE1YzRiZiJ9&s=aHR0cHM6Ly9jdXQtd2VsbGN1dC10di5henVyZWVkZ2UubmV0L2NsaXBzLzMvYS8wLzNhMDkwNTEwLTQ3MzEtNDI3MC05ZGRkLTVkYzIwMDE1YzRiZi8zYTA5MDUxMC00NzMxLTQyNzAtOWRkZC01ZGMyMDAxNWM0YmZfd2F0ZXJtYXJrLm1wNA%3D%3D") {
+            let urlData = NSData(contentsOf: url)
+            let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
+            let docDirectory = paths[0]
+            
+            let filePath = "\(docDirectory)/tmpVideo.mov"
+            
+            urlData?.write(toFile:filePath, atomically: true)
+            let videoLink = NSURL(fileURLWithPath: filePath)
+            
+            
+            let objectsToShare = [videoLink]
+            let shareViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(shareViewController, animated: true)
+            
+        }
+        
+        //self.navigationController?.pushViewController(shareViewController, animated: true)
     }
 }
